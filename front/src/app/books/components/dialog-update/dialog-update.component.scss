@@ -1,0 +1,37 @@
+.title {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.book_field {
+  margin: 10px 40px;
+  clear: both;
+  text-align: right;
+  input,
+  select {
+    margin-left: 10px;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgb(63, 81, 181);
+    width: 300px;
+    height: 25px;
+    font-size: 20px;
+    &:hover {
+      border-bottom: 2px solid rgb(151, 156, 187);
+    }
+    &:focus {
+      border-bottom: 2px solid orange;
+    }
+  }
+  label {
+    float: left;
+  }
+}
+form {
+  float: left;
+}
+
+app-button {
+  float: right;
+  margin-top: 20px;
+}

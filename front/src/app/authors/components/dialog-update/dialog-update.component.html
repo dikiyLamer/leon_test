@@ -1,0 +1,44 @@
+<h1 class="title">Редактировать автора</h1>
+<form [formGroup]="authorForm">
+  <div class="firstName author_field">
+    <label for="firstName">Имя:</label>
+    <app-input
+      [type]="'text'"
+      [id]="'firstName'"
+      [control]="formFirstName"
+    ></app-input>
+  </div>
+  <div class="secondName author_field">
+    <label for="secondName">Фамилия:</label>
+    <app-input
+      [type]="'text'"
+      [id]="'secondName'"
+      [control]="formSecondName"
+    ></app-input>
+  </div>
+  <div class="patronymic author_field">
+    <label for="patronymic">Oтчество:</label>
+    <app-input
+      [type]="'text'"
+      [id]="'patronymic'"
+      [control]="formPatronymic"
+    ></app-input>
+  </div>
+  <div class="dob author_field">
+    <label for="dob">Дата рождения:</label>
+    <app-input [type]="'date'" [id]="'dob'" [control]="formDob"></app-input>
+  </div>
+  <app-button
+    (onClick)="onOkClick()"
+    [mat-dialog-close]="author"
+    [disabled]="authorForm.invalid"
+    >Редактировать</app-button
+  >
+  <app-button
+    style="margin-right: 20px"
+    (onClick)="onDeleteClick()"
+    [disabled]="authorForm.invalid"
+    [color]="'red'"
+    >Удалить</app-button
+  >
+</form>

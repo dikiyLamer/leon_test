@@ -1,0 +1,28 @@
+<table>
+  <tr class="header_row">
+    <th *ngFor="let column of displayedColumns">
+      <div class="header_container">
+        <p>{{ column.alias }}</p>
+
+        <p
+          *ngIf="column.sort"
+          class="sort_icon"
+          (click)="emitSort(column.name)"
+        >
+          <span class="material-symbols-outlined"> swap_vert </span>
+        </p>
+      </div>
+    </th>
+  </tr>
+  <tr *ngFor="let data of dataSource" (click)="rowClick.emit(data)">
+    <td *ngFor="let column of displayedColumns">
+      <ng-container
+        *ngTemplateOutlet="
+          getContentChanges(column.name) || default;
+          context: { $implicit: data[column.name] }
+        "
+      ></ng-container>
+      <ng-template #default> {{ data[column.name] }} </ng-template>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,24 @@
+.title {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.author_field {
+  margin: 10px 40px;
+  clear: both;
+  text-align: right;
+  app-input {
+    margin-left: 10px;
+  }
+  label {
+    float: left;
+  }
+}
+form {
+  float: left;
+}
+
+app-button {
+  float: right;
+  margin-top: 20px;
+}

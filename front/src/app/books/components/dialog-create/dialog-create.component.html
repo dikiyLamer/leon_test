@@ -1,0 +1,33 @@
+<h1 class="title">Добавить автора</h1>
+<form [formGroup]="bookForm">
+  <div class="name book_field">
+    <label for="name">Название:</label>
+    <app-input [type]="'text'" [id]="'name'" [control]="formName"></app-input>
+  </div>
+  <div class="author book_field">
+    <label for="author">Автор:</label>
+    <select id="author" formControlName="author">
+      <option [value]="author.id" *ngFor="let author of authors">
+        {{ author.firstName }} {{ author.secondName }}
+      </option>
+    </select>
+  </div>
+  <div class="publisher book_field">
+    <label for="publisher">Издатель:</label>
+    <app-input
+      [type]="'text'"
+      [id]="'publisher'"
+      [control]="formPublisher"
+    ></app-input>
+  </div>
+  <div class="year book_field">
+    <label for="year">Год:</label>
+    <app-input [type]="'number'" [id]="'year'" [control]="formYear"></app-input>
+  </div>
+  <app-button
+    (onClick)="onOkClick()"
+    [mat-dialog-close]="book"
+    [disabled]="bookForm.invalid"
+    >Создать</app-button
+  >
+</form>

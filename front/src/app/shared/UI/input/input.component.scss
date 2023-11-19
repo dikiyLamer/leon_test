@@ -1,0 +1,15 @@
+input {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid rgb(63, 81, 181);
+  width: 300px;
+  height: 25px;
+  padding: 5px 10px;
+  font-size: 20px;
+  &:hover {
+    border-bottom: 2px solid rgb(151, 156, 187);
+  }
+  &:focus {
+    border-bottom: 2px solid orange;
+  }
+}

@@ -1,0 +1,12 @@
+<app-button (onClick)="openDialogCreate()">Создать книгу</app-button>
+<app-table
+  [dataSource]="books"
+  [displayedColumns]="displayedColumns"
+  (sort)="sortByColumn($event)"
+  (rowClick)="openDialogUpdate($event)"
+>
+  <ng-template appTableData="author" let-author
+    >{{ author.firstName }} {{ author.secondName }}</ng-template
+  >
+  <div></div
+></app-table>

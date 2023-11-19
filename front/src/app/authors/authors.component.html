@@ -1,0 +1,7 @@
+<app-button (onClick)="openDialogCreate()">Создать автора</app-button>
+<app-table
+  [dataSource]="authors"
+  [displayedColumns]="displayedColumns"
+  (sort)="sortByColumn($event)"
+  (rowClick)="openDialogUpdate($event)"
+></app-table>
